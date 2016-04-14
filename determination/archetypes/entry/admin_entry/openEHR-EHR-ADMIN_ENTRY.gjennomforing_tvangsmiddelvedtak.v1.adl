@@ -36,7 +36,7 @@ description
 	lifecycle_state = <"0">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"B54F1AE0645C13D94E4E8F90F63878C3">
+		["MD5-CAM-1.0.1"] = <"E0445EDA8EB40A0F82BAEBC3C8D0A64D">
 	>
 
 definition
@@ -65,7 +65,7 @@ definition
 							2|[local::at0014]  	-- Bruk av tvangsmidlet opphørt
 						}
 					}
-					ELEMENT[at0004] matches {	-- Endret tidspunkt
+					ELEMENT[at0004] occurrences matches {0..1} matches {	-- Endret tidspunkt
 						value matches {
 							DV_DATE_TIME matches {
 								value matches {yyyy-mm-ddTHH:??:??}
@@ -75,8 +75,13 @@ definition
 					ELEMENT[at0008] occurrences matches {0..1} matches {	-- Gjennomført av
 						value matches {
 							DV_CODED_TEXT matches {
-								defining_code matches {[ac0001]}		-- *New constraint(nb)
+								defining_code matches {[ac0001]}		-- New constraint
 							}
+						}
+					}
+					ELEMENT[at0015] occurrences matches {0..1} matches {	-- Stilling
+						value matches {
+							DV_TEXT matches {*}
 						}
 					}
 					ELEMENT[at0009] occurrences matches {0..1} matches {	-- Merknad
@@ -138,6 +143,10 @@ ontology
 					text = <"Bruk av tvangsmidlet opphørt">
 					description = <"*">
 				>
+				["at0015"] = <
+					text = <"Stilling">
+					description = <"Stilling til tjenesteyter som stod for gjenomføringen">
+				>
 			>
 		>
 		["no"] = <
@@ -185,6 +194,10 @@ ontology
 				["at0014"] = <
 					text = <"Bruk av tvangsmidlet opphørt">
 					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Stilling">
+					description = <"Stilling til tjenesteyter som stod for gjenomføringen">
 				>
 			>
 		>

@@ -36,7 +36,7 @@ description
 	lifecycle_state = <"0">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"2824E85B6A454A4545D3139F832EC38C">
+		["MD5-CAM-1.0.1"] = <"B9FA6C263D5ABB3F274AD1AF6DC8C986">
 	>
 
 definition
@@ -47,8 +47,13 @@ definition
 					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Faglig ansvarlig
 						value matches {
 							DV_CODED_TEXT matches {
-								defining_code matches {[ac0001]}		-- *New constraint(nb)
+								defining_code matches {[ac0001]}		-- New constraint
 							}
+						}
+					}
+					ELEMENT[at0003] occurrences matches {0..1} matches {	-- Stilling
+						value matches {
+							DV_TEXT matches {*}
 						}
 					}
 				}
@@ -73,6 +78,10 @@ ontology
 					text = <"Faglig ansvarlig">
 					description = <"*">
 				>
+				["at0003"] = <
+					text = <"Stilling">
+					description = <"*">
+				>
 			>
 		>
 		["nb"] = <
@@ -87,7 +96,11 @@ ontology
 				>
 				["at0002"] = <
 					text = <"Faglig ansvarlig">
-					description = <"*">
+					description = <"Den tjenesteyter som er ansvarlig for vedtaket">
+				>
+				["at0003"] = <
+					text = <"Stilling">
+					description = <"Tjenesteyters stilling">
 				>
 			>
 		>
